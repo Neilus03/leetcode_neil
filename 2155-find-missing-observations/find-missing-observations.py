@@ -6,8 +6,8 @@ class Solution:
         # Calculate the total required sum for both given rolls and missing rolls
         m = len(rolls)
         total_sum_needed = mean * (m + n)
-        current_sum = sum(rolls)
-        missing_sum = total_sum_needed - current_sum
+
+        missing_sum = total_sum_needed - sum(rolls)
         
         # Check if the missing_sum can be divided into n rolls with values between 1 and 6
         if missing_sum < n or missing_sum > 6 * n:
