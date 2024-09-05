@@ -16,14 +16,14 @@ class Solution:
         changing_rolls = [1] * n
 
 
-        i = 0
+
         extra_need = missing_sum - n  # Subtract n because each die is initialized to 1
         while extra_need > 0:
             # Increment the current dice by 1 until it's 6 or we've used all extra_need
-            while changing_rolls[i] < 6 and extra_need > 0:
-                changing_rolls[i] += 1
-                extra_need -= 1
-                
-            i += 1  # Move to the next die
+            for i in range(len(changing_rolls)):
+                if changing_rolls[i] < 6 and extra_need > 0:
+                    changing_rolls[i] += 1
+                    extra_need -= 1
+
 
         return changing_rolls
